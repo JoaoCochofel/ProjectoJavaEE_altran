@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="1.5.4" xs="false" id="_14691803291561" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" sm="false" abs="false" class="User" visibile="true" minimized="false" rootElement="_14691803291561" id="_1469180338781">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="Nome" id="_14691848933756"/>
+            <basic attribute-type="String" visibile="true" name="Mail" id="_14691849352147">
+                <jpa:column unique="true" nullable="true" insertable="true" updatable="true" length="255"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="TipoUser" id="_14691851450958"/>
+            <basic attribute-type="String" visibile="true" name="attribute1" id="_14691851469429"/>
+            <basic attribute-type="String" visibile="true" name="attribute2" id="_146918514783010"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id_user" id="_14691803388812">
+                <jpa:column unique="true" nullable="true" insertable="true" updatable="true"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:c>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Collection</ct>
+    </jpa:c>
+    <jpa:diagram>
+        <plane elementRef="_14691803291561">
+            <shape elementRef="_1469180338781">
+                <Bounds x="112.0" y="59.0" width="128.0" height="176.0"/>
+            </shape>
+        </plane>
+    </jpa:diagram>
+</jpa:entity-mappings>
