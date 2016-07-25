@@ -15,7 +15,6 @@ import javax.persistence.ManyToOne;
 @Entity
 public class UserInquerito implements Serializable {
 
-    @Id
     @ManyToOne(targetEntity = Inquerito.class)
     private Inquerito inquerito;
 
@@ -24,7 +23,6 @@ public class UserInquerito implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long IdUserInqerito;
 
-    @Id
     @ManyToOne(targetEntity = User.class)
     private User user;
 

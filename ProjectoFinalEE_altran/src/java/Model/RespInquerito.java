@@ -20,12 +20,10 @@ public class RespInquerito implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long IdRespInquerito;
 
-    @Id
-    @ManyToOne(optional = false, targetEntity = Resposta.class)
+    @ManyToOne(targetEntity = Resposta.class)
     private Resposta resposta;
 
-    @Id
-    @ManyToOne(optional = false, targetEntity = UserInquerito.class)
+    @ManyToOne(targetEntity = UserInquerito.class)
     private UserInquerito userInquerito;
 
     public RespInquerito() {

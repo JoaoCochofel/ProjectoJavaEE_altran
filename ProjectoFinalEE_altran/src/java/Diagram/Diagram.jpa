@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="1.5.4" thm="PMacColorScheme" xs="false" id="_14691803291561" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
     <jpa:schema>ProjFinJavaEE</jpa:schema>
-    <jpa:default-class abs="false" class="UserInqueritoPK" visibile="true" minimized="false">
-        <jpa:embeddable>false</jpa:embeddable>
-        <jpa:attribute attribute-type="Long" visibile="true" name="IdUserInqerito"/>
-        <jpa:attribute attribute-type="Long" visibile="true" name="inquerito"/>
-        <jpa:attribute attribute-type="Long" visibile="true" name="user"/>
-    </jpa:default-class>
-    <jpa:default-class abs="false" class="RespInqueritoPK" visibile="true" minimized="false">
-        <jpa:embeddable>false</jpa:embeddable>
-        <jpa:attribute attribute-type="Long" visibile="true" name="IdRespInquerito"/>
-        <jpa:attribute attribute-type="Long" visibile="true" name="userInquerito"/>
-        <jpa:attribute attribute-type="Long" visibile="true" name="resposta"/>
-    </jpa:default-class>
     <jpa:entity xre="false" sm="false" abs="false" class="User" visibile="true" minimized="false" rootElement="_14691803291561" id="_1469180338781">
         <jpa:attributes>
             <basic attribute-type="String" visibile="true" name="Nome" id="_14691848933756"/>
@@ -28,10 +16,10 @@
         </jpa:attributes>
         <jpa:table schema="ProjFinEE"/>
     </jpa:entity>
-    <jpa:entity xre="false" compositePrimaryKeyType="IDCLASS" compositePrimaryKeyClass="UserInqueritoPK" sm="false" abs="false" class="UserInquerito" visibile="true" minimized="false" rootElement="_14691803291561" id="_1469185982712">
+    <jpa:entity xre="false" sm="false" abs="false" class="UserInquerito" visibile="true" minimized="false" rootElement="_14691803291561" id="_1469185982712">
         <jpa:attributes>
-            <many-to-one optional="true" primaryKey="true" connected-entity-id="_1469186671763" visibile="true" name="inquerito" id="_146919419297661"/>
-            <many-to-one optional="true" primaryKey="true" connected-entity-id="_1469180338781" visibile="true" name="user" id="_146919470806378"/>
+            <many-to-one primaryKey="false" connected-entity-id="_1469180338781" visibile="true" name="user" id="_146943480612916"/>
+            <many-to-one primaryKey="false" connected-entity-id="_1469186671763" visibile="true" name="inquerito" id="_146943483328817"/>
             <jpa:id attribute-type="Long" visibile="true" name="IdUserInqerito" id="_146918598271311">
                 <jpa:column unique="true" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
                 <jpa:generated-value strategy="AUTO"/>
@@ -79,10 +67,10 @@
             </jpa:id>
         </jpa:attributes>
     </jpa:entity>
-    <jpa:entity xre="false" compositePrimaryKeyType="IDCLASS" compositePrimaryKeyClass="RespInqueritoPK" sm="false" abs="false" class="RespInquerito" visibile="true" minimized="false" rootElement="_14691803291561" id="_1469194492175">
+    <jpa:entity xre="false" sm="false" abs="false" class="RespInquerito" visibile="true" minimized="false" rootElement="_14691803291561" id="_1469194492175">
         <jpa:attributes>
-            <many-to-one optional="false" primaryKey="true" connected-entity-id="_1469185982712" visibile="true" name="userInquerito" id="_146919452123974"/>
-            <many-to-one optional="false" primaryKey="true" connected-entity-id="_1469187554001" visibile="true" name="resposta" id="_146919453623975"/>
+            <many-to-one primaryKey="false" connected-entity-id="_1469185982712" visibile="true" name="userInquerito" id="_146943484460218"/>
+            <many-to-one primaryKey="false" connected-entity-id="_1469187554001" visibile="true" name="resposta" id="_146943485371219"/>
             <jpa:id attribute-type="Long" visibile="true" name="IdRespInquerito" id="_146919588512489">
                 <jpa:column unique="true" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
                 <jpa:generated-value strategy="AUTO"/>
