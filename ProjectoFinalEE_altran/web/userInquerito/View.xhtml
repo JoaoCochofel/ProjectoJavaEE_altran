@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewUserInqueritoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewUserInqueritoLabel_inquerito}"/>
+                    <h:outputText value="#{userInqueritoController.selected.inquerito}" title="#{bundle.ViewUserInqueritoTitle_inquerito}"/>
+                    <h:outputText value="#{bundle.ViewUserInqueritoLabel_idUserInqerito}"/>
+                    <h:outputText value="#{userInqueritoController.selected.idUserInqerito}" title="#{bundle.ViewUserInqueritoTitle_idUserInqerito}"/>
+                    <h:outputText value="#{bundle.ViewUserInqueritoLabel_user}"/>
+                    <h:outputText value="#{userInqueritoController.selected.user}" title="#{bundle.ViewUserInqueritoTitle_user}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{userInqueritoController.destroyAndView}" value="#{bundle.ViewUserInqueritoDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewUserInqueritoEditLink}"/>
+                <br />
+                <h:commandLink action="#{userInqueritoController.prepareCreate}" value="#{bundle.ViewUserInqueritoCreateLink}" />
+                <br />
+                <h:commandLink action="#{userInqueritoController.prepareList}" value="#{bundle.ViewUserInqueritoShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewUserInqueritoIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

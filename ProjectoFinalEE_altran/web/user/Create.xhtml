@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateUserTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateUserLabel_mail}" for="mail" />
+                    <h:inputText id="mail" value="#{userController.selected.mail}" title="#{bundle.CreateUserTitle_mail}" />
+                    <h:outputLabel value="#{bundle.CreateUserLabel_tipoUser}" for="tipoUser" />
+                    <h:selectOneMenu id="tipoUser" value="#{userController.selected.tipoUser}" title="#{bundle.CreateUserTitle_tipoUser}" >
+                        <f:selectItems value="#{tipoUserController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateUserLabel_telefone}" for="telefone" />
+                    <h:inputText id="telefone" value="#{userController.selected.telefone}" title="#{bundle.CreateUserTitle_telefone}" />
+                    <h:outputLabel value="#{bundle.CreateUserLabel_nome}" for="nome" />
+                    <h:inputText id="nome" value="#{userController.selected.nome}" title="#{bundle.CreateUserTitle_nome}" />
+                    <h:outputLabel value="#{bundle.CreateUserLabel_idUser}" for="idUser" />
+                    <h:inputText id="idUser" value="#{userController.selected.idUser}" title="#{bundle.CreateUserTitle_idUser}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{userController.create}" value="#{bundle.CreateUserSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{userController.prepareList}" value="#{bundle.CreateUserShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateUserIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
